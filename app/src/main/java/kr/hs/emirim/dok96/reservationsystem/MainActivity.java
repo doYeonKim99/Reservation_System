@@ -31,9 +31,24 @@ public class MainActivity extends AppCompatActivity {
         radioDate = (RadioButton) findViewById(R.id.radio_date);
         radioTime = (RadioButton) findViewById(R.id.radio_time);
         calView=(CalendarView)findViewById(R.id.calendar);
-        timePick=(TimePicker)findViewById(R.id.timegi_pick);
+        timePick=(TimePicker)findViewById(R.id.time_pick);
         textResult=(TextView)findViewById(R.id.text_result);
         timePick.setVisibility(View.INVISIBLE);
         calView.setVisibility(View.INVISIBLE);
+
+        radioDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calView.setVisibility(View.VISIBLE);
+                timePick.setVisibility(View.INVISIBLE);
+            }
+        });
+        radioTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calView.setVisibility(View.INVISIBLE);
+                timePick.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }
